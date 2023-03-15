@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt'); // Chiffrer le mot de passe
 
-const User = require ('../models/User'); // import du model ulisateur 
+const User = require ('../models/user'); // import du model ulisateur 
 
 const jwt= require ('jsonwebtoken')// package token 
 
