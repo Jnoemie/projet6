@@ -12,9 +12,7 @@ const app = express();
 
 //dotenv.config();
 
-app.use((req, res) => {
-  res.json({ message: 'Votre requête a bien été reçue !' });
-});
+
 mongoose.connect('mongodb+srv://Nj:Projet6@cluster0.qlqwvqs.mongodb.net/?retryWrites=true&w=majority',
   {
     useNewUrlParser: true,
