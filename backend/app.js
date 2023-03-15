@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
-const dotenv= require ('dotenv')
+//const dotenv= require ('dotenv')
 
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
@@ -10,12 +10,12 @@ const userRoutes = require('./routes/user');
 
 const app = express();
 
-dotenv.config();
+//dotenv.config();
 
 app.use((req, res) => {
   res.json({ message: 'Votre requête a bien été reçue !' });
 });
-mongoose.connect('mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.qlqwvqs.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://Nj:Projet6@cluster0.qlqwvqs.mongodb.net/?retryWrites=true&w=majority',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -34,7 +34,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api/stuff', sauceRoutes);
+app.use('/api/sauce', sauceRoutes);
 app.use('/api/auth', userRoutes);
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
