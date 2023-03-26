@@ -2,18 +2,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
-//const dotenv= require ('dotenv')
+const dotenv= require ('dotenv');
 
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 
-
+dotenv.config();
 const app = express();
 
-//dotenv.config();
-
-
-mongoose.connect('mongodb+srv://Nj:Projet6@cluster0.qlqwvqs.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect(process.env.DB_mongoose,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true

@@ -2,7 +2,10 @@ const Sauce = require('../models/sauce'); // import du model sauce
 
 const fs = require('fs'); // file system permet de modifier , de supprimer des fichiers
 
-// création, modification, suppression et récupération sauce
+// -------création, modification, suppression et récupération sauce----
+
+
+//creation sauce
 exports.createSauce = (req, res, next) => {
     const sauceObject = JSON.parse(req.body.sauce);
     delete sauceObject._id;    
@@ -28,7 +31,7 @@ exports.modifySauce = (req, res, next) => { // on vérifie si la modification co
     .catch(()=> res.status(400).json({ error}))
 };
 
-
+// suppression sauce 
 exports.deleteSauce = (req, res, next) => {
     Sauce.findOne({_id: req.params.id}) // on identifie la sauce
     .then((sauce) => {
