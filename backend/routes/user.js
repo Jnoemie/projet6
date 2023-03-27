@@ -12,6 +12,6 @@ const passLimiter = rateLimit({
 
 // route Post pour créer un compte ou se connecter 
 router.post('/signup', userCtrl.signup);
-router.post('/login', userCtrl.login);
+router.post('/login', passLimiter, userCtrl.login);
 
 module.exports = router;
