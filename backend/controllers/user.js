@@ -5,10 +5,10 @@ const User = require ('../models/user'); // import du model ulisateur
 const jwt= require ('jsonwebtoken')// package token 
 
 
-const emailValidator = require('email-validator');// email validator package
-const passwordValidator = require('password-validator'); // password validator package
+//const emailValidator = require('email-validator');// email validator package
+//const passwordValidator = require('password-validator'); // password validator package
 
-const passwordSchema = new passwordValidator();
+/*const passwordSchema = new passwordValidator();
 
 passwordSchema
 .is().min(8)                                    // Minimum length 8
@@ -17,11 +17,11 @@ passwordSchema
 .has().lowercase()                              // Must have lowercase letters
 .has().digits()                                // Must have at least 1 digit
 .has().not().symbols();                         // Has no symbols
-
+*/
 // Inscription de l'utilisateur 
 
 exports.signup = (req, res, next) => {
-    if (!emailValidator.validate(req.body.email)) {
+   /* if (!emailValidator.validate(req.body.email)) {
         throw {
           error: "L'adresse mail n'est pas valide !", // Making sure the amil is an email
         };
@@ -29,7 +29,7 @@ exports.signup = (req, res, next) => {
         throw {
           error: "Le mot pass n'est pas valide !", // Making sure the password respect the schema
         };
-      } else {
+      } else {*/
     bcrypt.hash(req.body.password, 10)
       .then(hash => {
         const user = new User({// creer un nouvel user
@@ -42,7 +42,7 @@ exports.signup = (req, res, next) => {
       })
       .catch(error => res.status(500).json({ error }));
 }
-};
+;
 
 
   // Connexion de l'utilisateur 
