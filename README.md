@@ -12,7 +12,7 @@ ouvrir terminal
 entrer dans le dossier Fronend 
 et y executer :
 - npm install
-- npm start
+- npm run start
  sur qui lancera le port 4200
 
 ● Backend :
