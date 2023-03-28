@@ -1,4 +1,4 @@
-const jwt = require ('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 
 module.exports = (req, res, next) => {
     try {
@@ -9,8 +9,8 @@ module.exports = (req, res, next) => {
             throw 'User id non valable !';
         } else {
             next();
-    } 
-}catch(error) {
-        res.status(401).json({ error: new Error('Requête non authentifiée !')});
+        }
+    } catch (error) {
+        res.status(401).json({ error: new Error('Requête non authentifiée !') });
     }
- };
+};
