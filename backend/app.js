@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
 const dotenv = require('dotenv');
+const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require('helmet');
 
 
@@ -20,7 +21,6 @@ mongoose.connect(process.env.DB_mongoose,
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
-app.use(bodyParser.json());
 
 // header d'acces global à l'Api
 
@@ -31,6 +31,10 @@ app.use((req, res, next) => {
 
   next();
 });
+
+app.use(bodyParser.json());
+
+app.use(mongoSanitize());
 
 app.use(helmet({
   noCache: true
