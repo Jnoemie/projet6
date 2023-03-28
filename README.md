@@ -17,14 +17,14 @@ et y executer :
 
 ● Backend :
  lancer votre editeur de console 
- dan son terminal se rendre dans le dossier backend et y executer :
+ dans son terminal se rendre dans le dossier backend et y executer :
 
-- npm instal
+- npm install
 - node server ou nodemon server
 
 Pour lancer le site sur votre ordinateur :
 
-taper dans la barre de rechercg-he loacalhost:4200
+taper dans la barre de recherche loacalhost:4200
 
 Scénario :
 
