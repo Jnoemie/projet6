@@ -16,11 +16,15 @@ et y executer :
  sur qui lancera le port 4200
 
 ● Backend :
+
+Dans le fichier .env mettre votre adresse de srv de la base mongoDb avec votre identifiant et mot de passe à la place indiquer 
+
  lancer votre editeur de console 
  dans son terminal se rendre dans le dossier backend et y executer :
 
 - npm install
 - node server ou nodemon server
+
 
 Pour lancer le site sur votre ordinateur :
 
