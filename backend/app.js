@@ -34,9 +34,9 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 
-app.use(mongoSanitize());
+app.use(mongoSanitize());// prevention contre les injection 
 
-app.use(helmet({
+app.use(helmet({// vide cache et mis en place des en tete http 
   noCache: true
 }));
 
